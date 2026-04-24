@@ -1,0 +1,80 @@
+import os
+
+# Konfigurasi konten HTML
+target_url = "https://kemenkeu-my.sharepoint.com/:f:/g/personal/fitroh_hastanto_kemenkeu_go_id/IgBZT4fzmPuUR6uJsx-VbPJBAUKt5GDErRCXkYDDHaRxF4s?e=ySDjdh"
+
+html_content = f"""<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengalihkan ke Direktori Kemenkeu...</title>
+    
+    <meta http-equiv="refresh" content="0; url={target_url}" />
+    
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f6f8fa;
+            color: #24292f;
+        }}
+        .container {{
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }}
+        .loader {{
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0969da;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }}
+        @keyframes spin {{
+            0% {{ transform: rotate(0deg); }}
+            100% {{ transform: rotate(360deg); }}
+        }}
+        a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="loader"></div>
+        <h2>Menuju ke SharePoint Kemenkeu</h2>
+        <p>Sedang mengalihkan secara otomatis...</p>
+        <p>Jika tidak berpindah dalam 3 detik, <a href="{target_url}">klik di sini</a>.</p>
+    </div>
+
+    <script>
+        // Fallback menggunakan JavaScript jika meta refresh gagal
+        setTimeout(function() {{
+            window.location.href = "{target_url}";
+        }}, 1000);
+    </script>
+
+</body>
+</html>
+"""
+
+# Menyimpan file
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("File index.html berhasil dibuat.")
