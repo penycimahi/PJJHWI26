@@ -1,67 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Kumpulan Informasi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Informasi PJJ HWI BDK CIMAHI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6; /* Warna background abu-abu muda seperti Gbr 1 */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Bagian Hero atas dengan background foto dan overlay gradasi */
+        .hero {
+            width: 100%;
+            height: 40vh; /* Tinggi hero area */
+            background-image: url('Foto BDK.png'); /* Foto background buatanmu */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             text-align: center;
         }
 
-        .hero {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        /* Overlay gradasi ungu ke biru di atas foto */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
+            z-index: 1;
         }
 
-        .box {
-            background: white;
-            color: black;
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Di atas overlay */
             padding: 20px;
-            margin: -40px auto 30px;
-            width: 60%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        a {
-            display: block;
-            margin: 10px;
-            padding: 12px;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+        .logo-kemenkeu {
+            max-width: 150px; /* Ukuran logo */
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-weight: 600;
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Kotak konten putih */
+        .content-box {
+            background: rgb(255, 255, 255);
+            padding: 40px;
+            margin-top: -60px; /* Membuat kotak 'mengambang' di atas hero */
+            width: 70%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); /* Bayangan yang lebih lembut dan dalam */
+            z-index: 3;
+            text-align: left;
+        }
+
+        .content-box h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        /* Styling tombol link */
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            padding: 18px 25px;
+            /* Gradasi warna peach/orange yang kamu suka */
+            background: linear-gradient(135deg, #ff9966, #ff5e62); 
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 94, 98, 0.3);
+            font-size: 1.1rem;
         }
 
-        a:hover {
-            opacity: 0.85;
+        .link-button:hover {
+            transform: translateY(-3px); /* Efek terangkat saat di-hover */
+            box-shadow: 0 8px 20px rgba(255, 94, 98, 0.5);
+            background: linear-gradient(135deg, #ff5e62, #ff9966); /* Balik gradasi saat hover */
+        }
+
+        .link-button i {
+            margin-right: 15px; /* Jarak icon ke teks */
+            font-size: 1.3rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .content-box {
+                width: 90%;
+                padding: 20px;
+            }
+            .link-button {
+                padding: 15px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="box">
-    <h2>Sumber Informasi PJJ HWI BDK CIMAHI</h2>
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="kementerian_keuangan_republik_indonesia.png" alt="Logo Kemenkeu" class="logo-kemenkeu">
+            <h1>PUSAT INFORMASI</h1>
+        </div>
+    </div>
 
-    <a href="https://kemenkeu-my.sharepoint.com/:f:/g/personal/fitroh_hastanto_kemenkeu_go_id/IgBZT4fzmPuUR6uJsx-VbPJBAUKt5GDErRCXkYDDHaRxF4s?e=zj3Et7" target="_blank">
-        📁 Folder Pengumpulan Tugas
-    </a>
+    <div class="content-box">
+        <h2>Sumber Informasi PJJ HWI BDK CIMAHI</h2>
 
-    <a href="Kerangka Acuan Program - Pelatihan Jarak Jauh Proses Bisnis dan Aspek Perpajakan Segmentasi Wajib Pajak High Wealth Individual (HWI) dan Group.pdf" target="_blank">
-        📄 Kerangka Acuan Program
-    </a>
+        <a href="https://kemenkeu-my.sharepoint.com/:f:/g/personal/fitroh_hastanto_kemenkeu_go_id/IgBZT4fzmPuUR6uJsx-VbPJBAUKt5GDErRCXkYDDHaRxF4s?e=zj3Et7" target="_blank" class="link-button">
+            <i class="fas fa-folder-open"></i> Folder Pengumpulan Tugas
+        </a>
 
-    <a href="VB 2026.jpg" target="_blank">
-        🖼️ Virtual Background
-    </a>
+        <a href="Kerangka Acuan Program - Pelatihan Jarak Jauh Proses Bisnis dan Aspek Perpajakan Segmentasi Wajib Pajak High Wealth Individual (HWI) dan Group.pdf" target="_blank" class="link-button">
+            <i class="fas fa-file-alt"></i> Kerangka Acuan Program
+        </a>
 
-    <a href="https://forms.office.com/r/4ms8q3yEHc" target="_blank">
-        📝 Form Evaluasi Penyelenggaraan
-    </a>
+        <a href="VB 2026.jpg" target="_blank" class="link-button">
+            <i class="fas fa-image"></i> Virtual Background
+        </a>
 
-</div>
+        <a href="https://forms.office.com/r/4ms8q3yEHc" target="_blank" class="link-button">
+            <i class="fas fa-pen-fancy"></i> Form Evaluasi Penyelenggaraan
+        </a>
+
+    </div>
 
 </body>
 </html>
