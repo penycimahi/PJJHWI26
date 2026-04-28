@@ -151,34 +151,44 @@
             width: 20px;
         }
 
-        /* Lower Third Footer */
-        .footer-lower-third {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background-color: #1a237e; /* Biru Gelap Kemenkeu */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1000;
-            color: white;
-            padding: 0 0 0 20px;
-            box-sizing: border-box;
-            border-top: 3px solid #ffd700; /* Garis emas tipis */
-        }
+        /* Footer ala Data Studio */
+.footer-lower-third {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(90deg, #1a237e 60%, #283593 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1000;
+    color: white;
+    padding: 0 30px;
+    box-sizing: border-box;
+    border-top: 4px solid #ffd700;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
 
-        .footer-text {
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
+/* teks kiri */
+.footer-text {
+    font-size: 0.95rem;
+    z-index: 2;
+}
 
-        .footer-image {
-            height: 100%;
-            object-fit: contain;
-        }
-
+/* efek gambar kanan seperti Data Studio */
+.footer-lower-third::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100%;
+    background: url('Image Jul 11, 2025, 01_44_22 PM cop1y.png') no-repeat right bottom;
+    background-size: contain;
+    opacity: 0.95;
+}
         /* Responsive */
         @media (max-width: 768px) {
             .icon-container {
